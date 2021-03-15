@@ -13,12 +13,12 @@ export default function OriginInfo ({countries,currency}) {
 
           if (country.length > 0 && originCity.length >=2 && currency.length > 0) {
               const { data } = await axios.get(
-                `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/${country[0].Code}/${currency}/en-US/`,
+                `https://skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/${country[0].Code}/${currency}/en-US/`,
                 {
                     params: { query: originCity},
                     headers: {
                         "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-                        "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+                        "x-rapidapi-host": "skyscanner-flight-search-v1.p.rapidapi.com",
                     },
                 }
               );

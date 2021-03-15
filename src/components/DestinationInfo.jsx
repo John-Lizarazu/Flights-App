@@ -26,6 +26,7 @@ export default function DestinationInfo({ countries,currency, destinationPlace,h
                     params: { query: destinationCity },
                     headers: {
                     "x-rapidapi-key": process.env.REACT_APP_API_KEY,
+                    "x-rapidapi-key":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
                     },
                 }
             );
