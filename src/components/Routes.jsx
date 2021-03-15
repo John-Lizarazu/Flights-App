@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, Button, Typography } from "@material-ui/core";
+import { Card, Button, Typography, CardContent} from "@material-ui/core";
 
 const useStyles = makeStyles({
     root: {
@@ -9,6 +9,7 @@ const useStyles = makeStyles({
     bullet:{
         display:"inline-block",
         margin: " 0 2px",
+        transform: "scale(0.8",
     },
     title: { 
         fontSize: 12,
@@ -36,3 +37,26 @@ export default function Route({
         (pl) => pl.PlaceId === route.OutboundLeg.DestinationId
     )[0];
 }
+
+return(
+    <Card className={routeclass.root} variant="outlined">
+        <CardContent>
+            <Typography
+                className={routeclass.title}
+                color="secondary"
+                gutterBottom
+            >
+                {`Route #${route.QouteId}`}
+            </Typography>
+            <Typography className={routeclass.pos} color="secondary">
+                {`${route.Direct ? "Direct Flight" : "Non-direct Flight"}`}
+            </Typography>
+            <Typography variant="h5" component="h2">
+                Outbound
+            </Typography>
+            <Typography variant="body1" component="p">
+                Outbound
+            </Typography>
+        </CardContent>
+    </Card>
+)
