@@ -1,6 +1,7 @@
 import React , { useState, useEffect } from "react";
 import CurrencyInfo from "./components/CurrencyInfo";
-import DestinationInfo from "./components/DestinationInfo"
+import DestinationInfo from "./components/DestinationInfo";
+import OriginInfo from "./components/OriginInfo";
 import {Button, Container} from "@material-ui/core";
 import axios from "axios";
 
