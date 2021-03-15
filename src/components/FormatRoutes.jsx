@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { makeStyles } from "@material-ui/core/styles";
 import Routes from "./Routes";
-import { Grid, MenuItem, FormControl, Select} from "@material-ui/core";
+import { Grid, MenuItem, FormControl, Select,InputLabel} from "@material-ui/core";
 
 const useStyles = makeStyles((theme) => ({
     formControl: {
@@ -49,6 +50,37 @@ export default function FormatRoutes({
     } else if (sortedList.length >=1) {
         cheap= [sortedList[0].MinPrice];
     }
-    
+
+    return (
+        <>
+            <Grid container justify="center" style={{marginBottom: "2rem"}}>
+                <FormControl className={classes.formControl}>
+                    <InputLabel id="demo-simple-select-label">Sort by</InputLabel>
+                    <Select
+                        labelId="demo-simple-select-label"
+                        id="demo-simple-select"
+                        value={sortBy}
+                        onChange={(e) => setSortBy(e.target.value)}
+                    >
+                        <MenuItem value={-1}>Price low to high</MenuItem>
+                        <MenuItem value={1}>Price high to low</MenuItem>
+                    </Select>
+                </FormControl>
+            </Grid>
+            <Grid container justify="center" spacing={4}>
+                {routes.map((route) => (
+                    <Grid item key={route.QuoteId} xs={12} sm={6} md={4}>
+                        <Routes
+                            route={route}
+                            Symbol={Symbol}
+                            carriers={carriers}
+                            places={places}
+                            cheap={true ? cheap.includes(route.MinPrice) : false}
+                        />
+                    </Grid>
+                ))}
+            </Grid>
+        </>
+    );
 
 }
