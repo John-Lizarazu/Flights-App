@@ -3,17 +3,18 @@ import { TextField, Grid } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 
 export default function CurrencyInfo ({
-    Currencies,
-    Currency,
+    currencies,
+    currency,
     handleChange
 }) {
     return(
         <Grid container spacing={1}>
         <Grid className="grid-curr" item form="maincomponent" xs>
           <Autocomplete
-          options={Currencies.map((item) => item.Code)}
+          freesolo
+          options={currencies.map((item) => item.Code)}
           onChange={(e) => handleChange(e.target.innerHTML)}
-          value={Currency}
+          value={currency}
           renderInput={(params)=> (
             <TextField
             {...params}

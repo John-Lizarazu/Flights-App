@@ -21,7 +21,7 @@ export default function DestinationInfo({ countries,currency, destinationPlace,h
                 currency.length > 0
             ) {
                 const { data } = await axios.get(
-                `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
+                `https://skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
                 {
                     params: { query: destinationCity },
                     headers: {
