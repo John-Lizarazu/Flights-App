@@ -30,6 +30,9 @@ export default function Route({
     const outboundCarriers = carriers.filter(
         (carr) => carr.CarrierId === Number(route.OutboundLeg.CarrierIds[0])
     )[0];
+    const inboundCarrier = carriers.filter(
+        (carr) => carr.CarrierId ===Number(route.InboundLeg.CarrierIds[0])
+    )[0];
     const outboundPlaces = places.filter(
         (pl) =>pl.PlaceId ===route.OutboundLeg.OriginId
     )[0];
@@ -55,8 +58,44 @@ return(
                 Outbound
             </Typography>
             <Typography variant="body1" component="p">
-                Outbound
+                <strong>Origin:</strong> {" "}
+                {outboundPlaces
+                  ? `${outboundPlaces.Name} ${outboundPlaces.Type}`
+                  : "Loading.."}
+                <br />
             </Typography>
+            <Typography variant="body1" component="p">
+                <strong>Carrier: </strong>{" "}
+                 {outboundCarriers ? `${outboundCarriers.Name}` 
+                 : "Loading.."}
+                 <br />
+            </Typography>
+            <Typography variant="body1" component="p">
+                <strong>Departure datee: </strong> {`${departureDateOutbound}`}
+                <br />
+            </Typography>
+            <Typography variant="h5" component="h2">
+                Inbound
+            </Typography>
+            <Typography variant="body1" component="p">
+                <strong>Destination: </strong> {" "}
+                {inboundPlaces
+                  ? `${inboundPlaces.Name} ${inboundPlaces.Type}`
+                  : "Loading.."}
+                  <br />
+            </Typography>
+            <Typography variant="body1" component="p">
+                <strong>Carrier: </strong>{" "}
+                {inboundCarrier ? `${inboundCarrier.Name}` : "Loading..."}
+                <br />
+            </Typography>
+            <Typography variant="body1" component="p">
+                <strong>Departure date: </strong> {`${departureDateInbound}`}
+                <br />
+                <br />
+            </Typography>
+            <hr />
+
         </CardContent>
     </Card>
 )
