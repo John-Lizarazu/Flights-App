@@ -1,6 +1,6 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Card, Button, Typography, CardContent} from "@material-ui/core";
+import { Card, Button, Typography, CardContent, CardActions} from "@material-ui/core";
 
 const useStyles = makeStyles({
     root: {
@@ -22,7 +22,7 @@ const useStyles = makeStyles({
 export default function Route({
     route,Symbol,carriers,places,cheap,
 }) {
-    const routeclass=useStyle();
+    const routeclass=useStyles();
 
     const departureDateOutbound = new Date(route.OutboundLeg.DepartureDate);
     const departureDateInbound = new Date(route.InboundLeg.DepartureDate);
@@ -39,63 +39,78 @@ export default function Route({
     const inboundPlaces = places.filter(
         (pl) => pl.PlaceId === route.OutboundLeg.DestinationId
     )[0];
+
+
+    return(
+        <Card className={routeclass.root} variant="outlined">
+            <CardContent>
+                <Typography
+                    className={routeclass.title}
+                    color="secondary"
+                    gutterBottom
+                >
+                    {`Route #${route.QouteId}`}
+                </Typography>
+                <Typography className={routeclass.pos} color="secondary">
+                    {`${route.Direct ? "Direct Flight" : "Non-direct Flight"}`}
+                </Typography>
+                <Typography variant="h5" component="h2">
+                    Outbound
+                </Typography>
+                <Typography variant="body1" component="p">
+                    <strong>Origin:</strong> {" "}
+                    {outboundPlaces
+                    ? `${outboundPlaces.Name} ${outboundPlaces.Type}`
+                    : "Loading.."}
+                    <br />
+                </Typography>
+                <Typography variant="body1" component="p">
+                    <strong>Carrier: </strong>{" "}
+                    {outboundCarriers ? `${outboundCarriers.Name}` 
+                    : "Loading.."}
+                    <br />
+                </Typography>
+                <Typography variant="body1" component="p">
+                    <strong>Departure datee: </strong> {`${departureDateOutbound}`}
+                    <br />
+                </Typography>
+                <Typography variant="h5" component="h2">
+                    Inbound
+                </Typography>
+                <Typography variant="body1" component="p">
+                    <strong>Destination: </strong> {" "}
+                    {inboundPlaces
+                    ? `${inboundPlaces.Name} ${inboundPlaces.Type}`
+                    : "Loading.."}
+                    <br />
+                </Typography>
+                <Typography variant="body1" component="p">
+                    <strong>Carrier: </strong>{" "}
+                    {inboundCarrier ? `${inboundCarrier.Name}` : "Loading..."}
+                    <br />
+                </Typography>
+                <Typography variant="body1" component="p">
+                    <strong>Departure date: </strong> {`${departureDateInbound}`}
+                    <br />
+                    <br />
+                </Typography>
+                <hr />
+                <Typography variant="body1" component="p">
+                    <strong>Qoute date: </strong> {`${qouteDate}`}
+                </Typography>
+            </CardContent>
+            <CardActions>
+                {cheap ? (
+                    <Button
+                        size="small"
+                        variant="contained"
+                        style={{ backgroundColor: "blue" , color: "white"}}>
+                        {`Route min. price: ${Symbol} ${route.MinPrice}`}
+                    </Button>
+                ) : (
+                    <Button size="small">{`Route min price: ${Symbol} ${route.MinPrice}`}</Button>
+                )}
+            </CardActions>
+        </Card>
+    );
 }
-
-return(
-    <Card className={routeclass.root} variant="outlined">
-        <CardContent>
-            <Typography
-                className={routeclass.title}
-                color="secondary"
-                gutterBottom
-            >
-                {`Route #${route.QouteId}`}
-            </Typography>
-            <Typography className={routeclass.pos} color="secondary">
-                {`${route.Direct ? "Direct Flight" : "Non-direct Flight"}`}
-            </Typography>
-            <Typography variant="h5" component="h2">
-                Outbound
-            </Typography>
-            <Typography variant="body1" component="p">
-                <strong>Origin:</strong> {" "}
-                {outboundPlaces
-                  ? `${outboundPlaces.Name} ${outboundPlaces.Type}`
-                  : "Loading.."}
-                <br />
-            </Typography>
-            <Typography variant="body1" component="p">
-                <strong>Carrier: </strong>{" "}
-                 {outboundCarriers ? `${outboundCarriers.Name}` 
-                 : "Loading.."}
-                 <br />
-            </Typography>
-            <Typography variant="body1" component="p">
-                <strong>Departure datee: </strong> {`${departureDateOutbound}`}
-                <br />
-            </Typography>
-            <Typography variant="h5" component="h2">
-                Inbound
-            </Typography>
-            <Typography variant="body1" component="p">
-                <strong>Destination: </strong> {" "}
-                {inboundPlaces
-                  ? `${inboundPlaces.Name} ${inboundPlaces.Type}`
-                  : "Loading.."}
-                  <br />
-            </Typography>
-            <Typography variant="body1" component="p">
-                <strong>Carrier: </strong>{" "}
-                {inboundCarrier ? `${inboundCarrier.Name}` : "Loading..."}
-                <br />
-            </Typography>
-            <Typography variant="body1" component="p">
-                <strong>Departure date: </strong> {`${departureDateInbound}`}
-                <br />
-                <br />
-            </Typography>
-            <hr />
-
-        </CardContent>
-    </Card>
-)
