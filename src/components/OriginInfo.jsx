@@ -63,7 +63,23 @@ export default function OriginInfo ({countries,currency,originPlace,handlePlaceC
                     />
                 </Grid>
             </Grid>
-            
+            {originCity.length > 0 && originPlaces && originPlaces.length > 0 &&(
+                <Grid className="a-flex" item form ="maincomponent" xs>
+                    <Autocomplete
+                    options={originPlaces.map((item) => item.PlaceName)}
+                    onChange={(e) => handlePlaceChange(e.target.innerHTML)}
+                    value={originPlace}
+                    renderInput={(params) => (
+                        <TextField
+                            {...params}
+                            label="Select Origin Place"
+                            margin="normal"
+                            variant="outlined"
+                        />
+                    )}
+                />
+                </Grid>
+            )}
       </>
     )
         
