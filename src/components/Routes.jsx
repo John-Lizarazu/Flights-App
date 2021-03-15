@@ -26,7 +26,7 @@ export default function Route({
 
     const departureDateOutbound = new Date(route.OutboundLeg.DepartureDate);
     const departureDateInbound = new Date(route.InboundLeg.DepartureDate);
-    const qouteDate = new Date ( route.QouteDateTime);
+    const quoteDate = new Date ( route.QuoteDateTime);
     const outboundCarriers = carriers.filter(
         (carr) => carr.CarrierId === Number(route.OutboundLeg.CarrierIds[0])
     )[0];
@@ -49,7 +49,7 @@ export default function Route({
                     color="secondary"
                     gutterBottom
                 >
-                    {`Route #${route.QouteId}`}
+                    {`Route #${route.QuoteId}`}
                 </Typography>
                 <Typography className={routeclass.pos} color="secondary">
                     {`${route.Direct ? "Direct Flight" : "Non-direct Flight"}`}
@@ -96,7 +96,7 @@ export default function Route({
                 </Typography>
                 <hr />
                 <Typography variant="body1" component="p">
-                    <strong>Qoute date: </strong> {`${qouteDate}`}
+                    <strong>Quote date: </strong> {`${quoteDate}`}
                 </Typography>
             </CardContent>
             <CardActions>
