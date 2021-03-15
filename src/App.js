@@ -2,6 +2,7 @@ import React , { useState, useEffect } from "react";
 import CurrencyInfo from "./components/CurrencyInfo";
 import DestinationInfo from "./components/DestinationInfo";
 import OriginInfo from "./components/OriginInfo";
+import Navbar from "./components/Navbar";
 import {Button, Container} from "@material-ui/core";
 import axios from "axios";
 
@@ -45,17 +46,20 @@ export default function App() {
     }, []);
   
       return(
-        <Container maxWidth="sm">
-          <CurrencyInfo
-            currency={currency}
-            currencies={currencies}
-            handleChange={(curr) => setCurrency(curr)}
-          />
-          <DestinationInfo currency={currency} countries = {countries} />
-          <Button variant="contained" color="secondary">
-            Search
-          </Button>
-        </Container>
+        <>
+          <Navbar />
+          <Container maxWidth="sm">
+            <CurrencyInfo
+              currency={currency}
+              currencies={currencies}
+              handleChange={(curr) => setCurrency(curr)}
+            />
+            <DestinationInfo currency={currency} countries = {countries} />
+            <Button variant="contained" color="secondary">
+              Search
+            </Button>
+          </Container>
+        </>
       );
     
   
