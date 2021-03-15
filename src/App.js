@@ -4,6 +4,7 @@ import DestinationInfo from "./components/DestinationInfo";
 import OriginInfo from "./components/OriginInfo";
 import Navbar from "./components/Navbar";
 import {Button, Container} from "@material-ui/core";
+import Tooltip from "@material-ui/core/Tooltip";
 import axios from "axios";
 
 export default function App() {
@@ -55,9 +56,11 @@ export default function App() {
               handleChange={(curr) => setCurrency(curr)}
             />
             <DestinationInfo currency={currency} countries = {countries} />
-            <Button variant="contained" color="secondary">
-              Search
-            </Button>
+            <Tooltip title="Search">
+              <Button variant="contained" color="secondary">
+                Search
+              </Button>
+              </Tooltip>
           </Container>
         </>
       );
