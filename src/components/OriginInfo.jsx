@@ -13,20 +13,20 @@ export default function OriginInfo ({countries,currency,originPlace,handlePlaceC
           const country = countries.filter((item) => item.Name === originCountry);
 
           if (country.length > 0 && originCity.length >=2 && currency.length > 0) {
-              const { data } = await axios.get(
-                `https://skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
-                {
-                    params: { query: originCity},
-                    headers: {
-                        "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-                        "x-rapidapi-host": "skyscanner-flight-search-v1.p.rapidapi.com",
-                    },
-                }
-              );
+                const { data } = await axios.get(
+                    `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
+                    {
+                        params: { query: originCity},
+                        headers: {
+                            "x-rapidapi-key": process.env.API_REACT_KEY,
+                            "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+                        },
+                    }
+                );
             
-              setOriginPlaces(data.Places);
-              handlePlacesChange(data.Places);
-          }
+                setOriginPlaces(data.Places);
+                handlePlacesChange(data.Places);
+            }
         };
 
         fetchPlaces();
@@ -39,12 +39,12 @@ export default function OriginInfo ({countries,currency,originPlace,handlePlaceC
             <Grid container spacing={1}>
                 <Grid className="a-flex" item form ="maincomponent" xs>
                     <TextField
-                    style={{width:"100%"}}
-                    label="From city"
-                    margin="normal"
-                    variant="outlined"
-                    value={originCity}
-                    onChange={(e) => setOriginCity(e.target.value)}
+                        style={{width:"100%"}}
+                        label="From city"
+                        margin="normal"
+                        variant="outlined"
+                        value={originCity}
+                        onChange={(e) => setOriginCity(e.target.value)}
                     />
                 </Grid>
                 <Grid className="a-flex" item form="maincomponent" xs>

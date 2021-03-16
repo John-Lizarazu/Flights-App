@@ -3,8 +3,6 @@ import CurrencyInfo from "./components/CurrencyInfo";
 import DestinationInfo from "./components/DestinationInfo";
 import Dates from "./components/Dates";
 import DateBox from "./components/DateBox";
-import InboundInfo from "./components/InboundInfo";
-import OutboundInfo from "./components/OutboundInfo";
 import SearchInfo from "./components/SearchInfo";
 import FormatRoutes from "./components/FormatRoutes";
 import OriginInfo from "./components/OriginInfo";
@@ -12,11 +10,13 @@ import ToastInfo from "./components/ToastInfo";
 import WarningMessage from "./components/WarningMessage"
 import Navbar from "./components/Navbar";
 import {Container} from "@material-ui/core";
+import Load from "./components/Load";
 import axios from "axios";
 
 export default function App() {
   const [ countries, setCountries] = useState([]);
   const [ currencies, setCurrencies] = useState([]);
+  const [loading, setLoading]=useState("");
   const [ currency, setCurrency] = useState("");
   const [ Open, setOpen]=useState(false);
   const [ toastText, setToastText] =useState("");
@@ -46,6 +46,8 @@ export default function App() {
         return setOpen(true);
       }
     }
+
+    setLoading(true);
 
     const originPlaceId = originPlaces.filter(
       (place) => place.PlaceName === originPlace
@@ -132,9 +134,34 @@ export default function App() {
           inboundDate={inboundDate}
           handleInboundChange={(date) => setInboundDate(date)}
         />
-        <DateCheckbox
+        <DateBox
           anytime={anytime}
           handleCheck={(e) => setAnytime(e.target.checked)}
+        />
+        <SearchInfo handleFlightOptions={handleFlightOptions} />
+        {loading ? (
+          <Load />
+        ) : routes.length >0 ? (
+          <FormatRoutes
+            routes={routes}
+            currency={currency}
+            currencies={currencies}
+            carriers={carriers}
+            places={places}
+          />
+        ) : (
+          <WarningMessage />
+        )}
+        <ToastInfo
+          severity={toastSeverity}
+          text={toastText}
+          open={Open}
+          handleClose={(e,r) => {
+            if(r === "clickaway"){
+              return;
+            }
+            setOpen(false);
+          }}
         />
       </Container>
         </>
