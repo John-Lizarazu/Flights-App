@@ -85,34 +85,34 @@ export default function App() {
       },
     
 
-  const fetchCurrencies = async () => {
-    const { data } = await axios.get(
-      "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/currencies",
-      {
-        headers: {
-          "x-rapidapi-key": process.env.API_REACT_KEY,
-          "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-        },
-      }
-    );
-
-    console.log(data);
-    setCurrencies(data.Currencies);
-    };
-
-    const fetchCountries = async () => {
+    const fetchCurrencies = async () => {
       const { data } = await axios.get(
-        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US",
+        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/currencies",
         {
           headers: {
-            "x-rapidapi=key": process.env.API_REACT_KEY,
-            "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+            "x-rapidapi-key": process.env.API_REACT_KEY,
+            "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
           },
         }
       );
+
       console.log(data);
-      setCountries(data.Countries);
-    };
+      setCurrencies(data.Currencies);
+      };
+
+      const fetchCountries = async () => {
+        const { data } = await axios.get(
+          "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US",
+          {
+            headers: {
+              "x-rapidapi=key": process.env.API_REACT_KEY,
+              "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+            },
+          }
+        );
+        console.log(data);
+        setCountries(data.Countries);
+      };
 
       fetchCurrencies();
       fetchCountries();
