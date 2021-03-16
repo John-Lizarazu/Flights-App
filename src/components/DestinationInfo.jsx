@@ -36,6 +36,7 @@ export default function DestinationInfo({ countries,currency, destinationPlace,h
         };
 
         fetchPlaces();
+        // eslint-disable-next-line
     }, [destinationCity, destinationCountry, currency, countries]);
 
   return (
