@@ -49,6 +49,7 @@ export default function OriginInfo ({countries,currency,originPlace,handlePlaceC
                 </Grid>
                 <Grid className="a-flex" item form="maincomponent" xs>
                     <Autocomplete
+                        freesolo
                         options={countries.map((item) => item.Name)} 
                         onChange={(e) => setOriginCountry(e.target.innerHTML)}
                         value={originCountry}

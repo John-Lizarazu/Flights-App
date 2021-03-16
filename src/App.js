@@ -60,82 +60,85 @@ export default function App() {
       ? `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/${currency}/en-US/${originPlaceId}/${destinationPlaceId}/anytime/anytime`
       : `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/browsedates/v1.0/US/${currency}/en-US/${originPlaceId}/${destinationPlaceId}/${outboundDate}/${inboundDate}`;
 
-      const { data } = await axios.get(apiUrl, {
-        headers: {
-          "x-rapidapi-key": process.env.API_REACT_KEY,
-          "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+    const { data } = await axios.get(apiUrl, {
+      headers: {
+        "x-rapidapi-key": process.env.API_REACT_KEY,         
+        "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
         },
       });
 
-      setRoutes (data.Qoutes);
-      setCarriers(data.Carriers);
-      setPlaces(data.Places);
-
-      setToastText(`Successfullt fetched ${data.Quotes.length} routes!`);
-      setToastSeverity("success");
-      setOpen(data.Quotes.length > 0 && true);
+    setRoutes (data.Qoutes);
+    setCarriers(data.Carriers);
+    setPlaces(data.Places);
+    setToastText(`Successfullt fetched ${data.Quotes.length} routes!`);
+    setToastSeverity("success");
+    setOpen(data.Quotes.length > 0 && true);
     };
 
-    useEffect(() => {
-      const options = {
-        headers: {
-          "x-rapidapi-key":process.env.API_REACT_KEY,
-          "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+  useEffect(() => {
+    const options = {
+      headers: {
+        "x-rapidapi-key":process.env.API_REACT_KEY,
+        "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
         },
-      },
+    };
     
 
     const fetchCurrencies = async () => {
       const { data } = await axios.get(
-        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/currencies",
-        {
-          headers: {
-            "x-rapidapi-key": process.env.API_REACT_KEY,
-            "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-          },
-        }
+        "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/currencies",options
+    
       );
 
-      console.log(data);
       setCurrencies(data.Currencies);
-      };
+   };
 
-      const fetchCountries = async () => {
-        const { data } = await axios.get(
-          "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US",
-          {
-            headers: {
-              "x-rapidapi=key": process.env.API_REACT_KEY,
-              "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-            },
-          }
+    const fetchCountries = async () => {
+      const { data } = await axios.get(
+          "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US",options
+
         );
-        console.log(data);
         setCountries(data.Countries);
-      };
+   };
 
       fetchCurrencies();
       fetchCountries();
   }, []);
   
-      return(
-        <>
-          <Navbar />
-          <Container maxWidth="sm">
-            <CurrencyInfo
-              currency={currency}
-              currencies={currencies}
-              handleChange={(curr) => setCurrency(curr)}
-            />
-            <DestinationInfo currency={currency} countries = {countries}
-              destinationPlace={destinationPlace}
-              handlePlaceChange={(place) => setDestinationPlace(place)}
-              handlePlacesChange={(places) => setDestinationPlaces(places)}
-             />
-          </Container>
+  return(
+    <>
+      <Navbar />
+      <Container maxWidth="sm">
+        <CurrencyInfo
+          currency={currency}
+          currencies={currencies}
+          handleChange={(curr) => setCurrency(curr)}
+        />
+        <DestinationInfo currency={currency} countries = {countries}
+          destinationPlace={destinationPlace}
+          handlePlaceChange={(place) => setDestinationPlace(place)}
+          handlePlacesChange={(places) => setDestinationPlaces(places)}
+        />
+        <OriginInfo
+          currency={currency}
+          contries={countries}
+          originPlace={originPlace}
+          handlePlaceChange={(place)=>setOriginPlace(place)}
+          handlePlacesChange={(places)=>setOriginPlaces(places)}
+        />
+        <Dates
+          outboundDate={outboundDate}
+          handleOutboundChange={(date) => setOutboundDate(date)}
+          inboundDate={inboundDate}
+          handleInboundChange={(date) => setInboundDate(date)}
+        />
+        <DateCheckbox
+          anytime={anytime}
+          handleCheck={(e) => setAnytime(e.target.checked)}
+        />
+      </Container>
         </>
-      );
+  );
     
-  
   
 }
