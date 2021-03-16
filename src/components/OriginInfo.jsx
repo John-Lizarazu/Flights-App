@@ -19,8 +19,9 @@ export default function OriginInfo ({
     useEffect(() => {
      
       const fetchPlaces = async () => {
-        
   
+        if(originCity.length >=2 && currency.length >0){
+
         
           const { data } = await axios.get(
               `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
@@ -37,7 +38,7 @@ export default function OriginInfo ({
           setOriginPlaces(data.Places);
           handleOriginPlacesChange(data.Places);
         }
-      
+      };
   
       
       fetchPlaces();
@@ -60,6 +61,7 @@ export default function OriginInfo ({
           <Grid className="d-flex" item form="maincomponent" xs>
             <Autocomplete
               freeSolo
+              options={countries.map((item) => item.Name)}
               onChange={(e) => setOriginCountry(e.target.innerHTML)}
               value={originCountry}
               renderInput={(params) => (

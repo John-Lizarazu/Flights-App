@@ -110,7 +110,7 @@ export default function App() {
   return(
     <>
       <Navbar />
-      <Container maxWidth="sm">
+      <Container maxWidth="md">
         <CurrencyInfo
           currency={currency}
           currencies={currencies}
@@ -123,7 +123,7 @@ export default function App() {
         />
         <OriginInfo
           currency={currency}
-          contries={countries}
+          countries={countries}
           originPlace={originPlace}
           handlePlaceChange={(place)=>setOriginPlace(place)}
           handlePlacesChange={(places)=>setOriginPlaces(places)}

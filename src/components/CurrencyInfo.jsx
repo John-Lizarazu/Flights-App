@@ -11,7 +11,7 @@ export default function CurrencyInfo ({
         <Grid container spacing={1}>
         <Grid className="grid-curr" item form="maincomponent" xs>
           <Autocomplete
-          freesolo
+          freeSolo
           options={currencies.map((item) => item.Code)}
           onChange={(e) => handleChange(e.target.innerHTML)}
           value={currency}
