@@ -5,7 +5,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 export default function SearchInfo({ handleFlightOptions }) {
     return (
         <Tooltip title="Search">
-            <Button variant="contained" color="secondary" onClick={handleFlightOptions} style={{ marginBottom: "1.5rem", marginTop:"1.5rem"}}>
+            <Button variant="contained" color="default" onClick={handleFlightOptions} style={{ marginBottom: "1.5rem", marginTop:"1.5rem"}}>
                 Search
             </Button>
         </Tooltip>

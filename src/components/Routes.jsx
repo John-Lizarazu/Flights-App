@@ -104,7 +104,7 @@ export default function Route({
                     <Button
                         size="small"
                         variant="contained"
-                        style={{ backgroundColor: "blue" , color: "white"}}>
+                        >
                         {`Route min. price: ${Symbol} ${route.MinPrice}`}
                     </Button>
                 ) : (

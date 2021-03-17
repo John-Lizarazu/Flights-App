@@ -18,9 +18,9 @@ export default function Navbar() {
     const navclass = useStyles();
 
     return(
-        <AppBar position="static" color="secondary">
+        <AppBar position="static" color="default">
             <Toolbar>
-                <Typography variant="h5" className={navclass.title}>
+                <Typography variant="h5" align='center' className={navclass.title}>
                     Find Flights
                 </Typography>
             </Toolbar>

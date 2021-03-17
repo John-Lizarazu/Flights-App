@@ -12,6 +12,7 @@ import Navbar from "./components/Navbar";
 import {Container} from "@material-ui/core";
 import Load from "./components/Load";
 import axios from "axios";
+import "./App.css";
 
 export default function App() {
   const [ countries, setCountries] = useState([]);

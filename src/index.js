@@ -2,10 +2,8 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
+import "./App.css";
 
-
-
-document.body.style.backgroundColor ="#f7eded";
 
 ReactDOM.render(
     <App />,
