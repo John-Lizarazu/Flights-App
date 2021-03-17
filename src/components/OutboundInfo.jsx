@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     textField: {
         marginLeft: theme.spacing(1),
         marginRight: theme.spacing(1),
-        width: 200,
+        width: 300,
     },
 }));
 
@@ -23,9 +23,8 @@ export default function OutboundInfo ({
         <form className={outboundclass.container} noValidate>
             <TextField
                 style={{width: "100%"}}
-                id="date"
                 label="Outbound Date"
-                
+                id="date"
                 type="date"
                 value={outboundDate}
                 onChange={(e) => handleOutboundChange(e.target.value)}

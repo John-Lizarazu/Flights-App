@@ -8,6 +8,7 @@ export default function CurrencyInfo ({
     handleChange
 }) {
     return(
+        //create grid so user can see where to input their data and let the API give them options of different currencies
         <Grid container spacing={1}>
         <Grid className="grid-curr" item form="maincomponent" xs>
           <Autocomplete

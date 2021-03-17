@@ -7,7 +7,8 @@ export default function Dates ({
     outboundDate,handleOutboundChange,inboundDate,handleInboundChange,
 }) {
     return (
-        <Grid container spacing={1} style={{ marginTop: "2rem" }}>
+        //handles both outbound and inbound Info and allows the user to see where to input their data
+        <Grid container spacing={1} style={{ marginTop: "1rem" }}>
             <Grid className ="a-flex" item form="maincomponent" xs>
                 <OutboundInfo
                     outboundDate={outboundDate}
