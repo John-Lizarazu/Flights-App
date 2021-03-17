@@ -16,7 +16,7 @@ import axios from "axios";
 export default function App() {
   const [ countries, setCountries] = useState([]);
   const [ currencies, setCurrencies] = useState([]);
-  const [loading, setLoading]=useState("");
+  const [loading, setLoading]=useState(false);
   const [ currency, setCurrency] = useState("");
   const [ Open, setOpen]=useState(false);
   const [ toastText, setToastText] =useState("");
@@ -66,16 +66,17 @@ export default function App() {
       headers: {
         "x-rapidapi-key": process.env.API_REACT_KEY,         
         "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
-        },
-      });
+      },
+    });
 
-    setRoutes (data.Qoutes);
+    setRoutes (data.Quotes);
     setCarriers(data.Carriers);
     setPlaces(data.Places);
+    setLoading(false);
     setToastText(`Successfullt fetched ${data.Quotes.length} routes!`);
     setToastSeverity("success");
     setOpen(data.Quotes.length > 0 && true);
-    };
+  };
 
   useEffect(() => {
     const options = {
@@ -93,7 +94,7 @@ export default function App() {
       );
 
       setCurrencies(data.Currencies);
-   };
+    };
 
     const fetchCountries = async () => {
       const { data } = await axios.get(
@@ -101,8 +102,7 @@ export default function App() {
 
         );
         setCountries(data.Countries);
-   };
-
+    };
       fetchCurrencies();
       fetchCountries();
   }, []);
@@ -164,8 +164,7 @@ export default function App() {
           }}
         />
       </Container>
-        </>
+    </>
   );
-    
-  
+
 }
