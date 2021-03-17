@@ -7,8 +7,8 @@ export default function OriginInfo ({
     countries,
     currency,
     originPlace,
-    handleOriginPlaceChange,
-    handleOriginPlacesChange,
+    handlePlaceChange,
+    handlePlacesChange,
   }) {
     
     const [originCity, setOriginCity] = useState("");
@@ -28,7 +28,7 @@ export default function OriginInfo ({
             {
               params: { query: originCity },
               headers: {
-                "x-rapidapi-key": process.env.API_REACT_KEY,
+                "x-rapidapi-key": "459b119038msh08814ff91df263ep16ed51jsn379cab344d53",
                 "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
               },
             }
@@ -36,7 +36,7 @@ export default function OriginInfo ({
   
          
           setOriginPlaces(data.Places);
-          handleOriginPlacesChange(data.Places);
+          handlePlacesChange(data.Places);
         }
       };
   
@@ -80,7 +80,7 @@ export default function OriginInfo ({
             <Autocomplete
               freeSolo
               options={originPlaces.map((item) => item.PlaceName)}
-              onChange={(e) => handleOriginPlaceChange(e.target.innerHTML)}
+              onChange={(e) => handlePlaceChange(e.target.innerHTML)}
               value={originPlace}
               renderInput={(params) => (
                 <TextField

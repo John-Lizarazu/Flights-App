@@ -21,18 +21,18 @@ export default function DestinationInfo({ countries,currency, destinationPlace,h
                 currency.length > 0
             ) {
                 const { data } = await axios.get(
-                `https://skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
+                `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
                 {
                     params: { query: destinationCity },
                     headers: {
-                    "x-rapidapi-key": process.env.REACT_APP_API_KEY,
-                    "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
+                        "x-rapidapi-key": "459b119038msh08814ff91df263ep16ed51jsn379cab344d53",
+                        "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
                     },
-                }
-            );
+                 }
+                );
                 setDestinationPlaces(data.Places);
                 handlePlacesChange(data.Places);
-            }
+         }
         };
 
         fetchPlaces();

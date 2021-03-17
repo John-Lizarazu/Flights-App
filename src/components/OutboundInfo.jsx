@@ -25,6 +25,7 @@ export default function OutboundInfo ({
                 style={{width: "100%"}}
                 id="date"
                 label="Outbound Date"
+                
                 type="date"
                 value={outboundDate}
                 onChange={(e) => handleOutboundChange(e.target.value)}

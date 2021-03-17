@@ -64,7 +64,7 @@ export default function App() {
 
     const { data } = await axios.get(apiUrl, {
       headers: {
-        "x-rapidapi-key": process.env.API_REACT_KEY,         
+        "x-rapidapi-key": "459b119038msh08814ff91df263ep16ed51jsn379cab344d53",         
         "x-rapidapi-host": "skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
       },
     });
@@ -81,31 +81,31 @@ export default function App() {
   useEffect(() => {
     const options = {
       headers: {
-        "x-rapidapi-key":process.env.API_REACT_KEY,
+        "x-rapidapi-key":"459b119038msh08814ff91df263ep16ed51jsn379cab344d53",
         "x-rapidapi-host":"skyscanner-skyscanner-flight-search-v1.p.rapidapi.com",
         },
     };
     
 
-    const fetchCurrencies = async () => {
-      const { data } = await axios.get(
+     const fetchCurrencies = async () => {
+       const { data } = await axios.get(
         "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/currencies",options
     
       );
 
-      setCurrencies(data.Currencies);
-    };
+       setCurrencies(data.Currencies);
+     };
 
-    const fetchCountries = async () => {
-      const { data } = await axios.get(
-          "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US",options
+     const fetchCountries = async () => {
+       const { data } = await axios.get(
+           "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US",options
 
-        );
-        setCountries(data.Countries);
-    };
-      fetchCurrencies();
-      fetchCountries();
-  }, []);
+         );
+         setCountries(data.Countries);
+     };
+        fetchCurrencies();
+       fetchCountries();
+   }, []);
   
   return(
     <>
@@ -116,7 +116,9 @@ export default function App() {
           currencies={currencies}
           handleChange={(curr) => setCurrency(curr)}
         />
-        <DestinationInfo currency={currency} countries = {countries}
+        <DestinationInfo 
+          currency={currency} 
+          countries = {countries}
           destinationPlace={destinationPlace}
           handlePlaceChange={(place) => setDestinationPlace(place)}
           handlePlacesChange={(places) => setDestinationPlaces(places)}
