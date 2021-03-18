@@ -1,7 +1,7 @@
 {
   "name": "flights-app",
   "version": "0.1.0",
-  "homepage": "https://john-lizarazu.github.io/Flights-App/",
+  "homepage": "https://John-Lizarazu.github.io/Flights-App/",
   "private": false,
   "dependencies": {
     "@fontsource/lato": "^4.2.2",
