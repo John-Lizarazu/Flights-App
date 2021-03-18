@@ -2,7 +2,7 @@
 
 # Skyscanner Flights :airplane:
 
-Web App https://john-lizarazu.github.io/Flights-App/
+# UPDATED Web App https://flights-app-sws.herokuapp.com/
 
 Web application made with ReactJS, Material-UI, Axios, HTML5, and CSS3, and The Skyscanner API.
 
