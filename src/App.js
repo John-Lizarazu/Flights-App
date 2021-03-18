@@ -82,7 +82,7 @@ export default function App() {
     setPlaces(data.Places);
     setLoading(false);
     //Shows the user how many flights were found using toast
-    setToastText(`Successfullt fetched ${data.Quotes.length} routes!`);
+    setToastText(`Successfully fetched ${data.Quotes.length} routes!`);
     setToastSeverity("success");
     setOpen(data.Quotes.length > 0 && true);
   };

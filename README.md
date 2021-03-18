@@ -1,10 +1,10 @@
-# Capital One Software Engineering Summit Submission
+# Capital One Software Engineering Summit Submission :airplane:
 
 # Skyscanner Flights
 
 Web application made with ReactJS, Material-UI, Axios, HTML5, and CSS3, and The Skyscanner API.
 
-Purpose:To find flights that the user inputs depending on their desired dates. 
+Purpose: To find flights that the user inputs depending on their desired dates. 
 This Web app. can sort from cheap to high price ranges and vice versa.
 
 <img width="1009" alt="Screen Shot 2021-03-18 at 12 00 31 AM" src="https://user-images.githubusercontent.com/74698225/111571379-105b1b00-877d-11eb-927d-b4345ed61227.png">
@@ -42,6 +42,7 @@ $ yarn install
 #### Usage
 
 ```
+$cd flights-app
 $ npm start
 ```
 
@@ -51,6 +52,12 @@ To use your API key to make the web app work you would have to copy and paste it
 
 #### All set
 By then you should have a working web app and can have fun searching for flights.
+
+<img width="972" alt="Screen Shot 2021-03-18 at 12 06 33 AM" src="https://user-images.githubusercontent.com/74698225/111571884-e81fec00-877d-11eb-8c72-fc8e24be13ac.png">
+
+
+<img width="942" alt="Screen Shot 2021-03-18 at 12 08 31 AM" src="https://user-images.githubusercontent.com/74698225/111572020-38974980-877e-11eb-8717-2e11e97d5f41.png">
+
 
 #### Resources
 [React.js](https://reactjs.org/) - Front-end web library
