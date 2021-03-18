@@ -21,6 +21,9 @@ export default function DestinationInfo({ countries,currency, destinationPlace,h
                 destinationCity.length >= 2 &&
                 currency.length > 0
             ) {
+
+                //To implement your API key, just copy and paste it in between the quotation marks
+                //DO NOT USE THE API KEY THAT IS ALREADY INPUTTED. switch it to your API key
                 const { data } = await axios.get(
                 `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
                 {
@@ -46,7 +49,7 @@ export default function DestinationInfo({ countries,currency, destinationPlace,h
                 <Grid className="d-flex" item form="maincomponent" xs>
                     <TextField
                         style={{ width: "100%" }}
-                        label="Destination city"
+                        label="Destination city/state"
                         margin="normal"
                         variant="outlined"
                         value={destinationCity}

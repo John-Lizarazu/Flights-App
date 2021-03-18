@@ -45,11 +45,7 @@ $ npm start
 
 #### Implementation
 
-To get the api to work you must create a new file called `.env` and import your API key.
-For example:
-```env
-REACT_API_KEY='your-api-key-here'
-```
+To use your API key to make the web app work you would have to copy and paste it to where the previos key was. I added a comment to help understand what I mean.
 
 #### All set
 By then you should have a working web app and can have fun searching for flights.

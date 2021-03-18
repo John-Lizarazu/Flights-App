@@ -29,7 +29,7 @@ export default function OutboundInfo ({
                 value={outboundDate}
                 onChange={(e) => handleOutboundChange(e.target.value)}
                 className={outboundclass.textField}
-                inputLabelProps={{
+                InputLabelProps={{
                     shrink: true,
                 }}
             />

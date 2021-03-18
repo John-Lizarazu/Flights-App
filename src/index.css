@@ -5,14 +5,23 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("https://thewallpaper.co/wp-content/uploads/2020/08/flight-clouds-airplane-view-hd-city-wallpapers-amazing-city-view-beautiful-place-wallpaper-cool-city-images-amazing-photo-shot-widescreen-images-desktop-images-background-1600x1023-1.jpg");
-  background-position:fixed;
-  min-width: 100%;
-  min-height: 200%;
-  background-size: cover;
+  /* background-image: url("https://thewallpaper.co/wp-content/uploads/2020/08/flight-clouds-airplane-view-hd-city-wallpapers-amazing-city-view-beautiful-place-wallpaper-cool-city-images-amazing-photo-shot-widescreen-images-desktop-images-background-1600x1023-1.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
   
 }
 
+#root, html{
+  background-color:lightsteelblue;
+  
+}
+
+/* html {
+  height: 100%;
+  margin: 0%;
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
