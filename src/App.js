@@ -111,7 +111,6 @@ export default function App() {
      const fetchCountries = async () => {
        const { data } = await axios.get(
            "https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/reference/v1.0/countries/en-US",options
-
          );
          //set the countries
          setCountries(data.Countries);
