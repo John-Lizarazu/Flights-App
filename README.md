@@ -2,7 +2,7 @@
 
 # Skyscanner Flights :airplane:
 
-# UPDATED Web App https://flights-app-sws.herokuapp.com/
+## Web App https://flights-app-sws.herokuapp.com/
 
 Web application made with ReactJS, Material-UI, Axios, HTML5, and CSS3, and The Skyscanner API.
 
