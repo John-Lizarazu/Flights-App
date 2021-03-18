@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/Flights-App/static/css/main.222021ff.chunk.css",
+    "main.js": "/Flights-App/static/js/main.6976ce3a.chunk.js",
+    "main.js.map": "/Flights-App/static/js/main.6976ce3a.chunk.js.map",
+    "runtime-main.js": "/Flights-App/static/js/runtime-main.7aef9f60.js",
+    "runtime-main.js.map": "/Flights-App/static/js/runtime-main.7aef9f60.js.map",
+    "static/js/2.413f9268.chunk.js": "/Flights-App/static/js/2.413f9268.chunk.js",
+    "static/js/2.413f9268.chunk.js.map": "/Flights-App/static/js/2.413f9268.chunk.js.map",
+    "index.html": "/Flights-App/index.html",
+    "static/css/main.222021ff.chunk.css.map": "/Flights-App/static/css/main.222021ff.chunk.css.map",
+    "static/js/2.413f9268.chunk.js.LICENSE.txt": "/Flights-App/static/js/2.413f9268.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7aef9f60.js",
+    "static/js/2.413f9268.chunk.js",
+    "static/css/main.222021ff.chunk.css",
+    "static/js/main.6976ce3a.chunk.js"
+  ]
+}
