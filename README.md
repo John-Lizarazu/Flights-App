@@ -2,6 +2,8 @@
 
 # Skyscanner Flights :airplane:
 
+Web App https://john-lizarazu.github.io/Flights-App/
+
 Web application made with ReactJS, Material-UI, Axios, HTML5, and CSS3, and The Skyscanner API.
 
 Purpose: To find flights that the user inputs depending on their desired dates. 
