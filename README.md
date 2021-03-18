@@ -7,6 +7,8 @@ Web application made with ReactJS, Material-UI, Axios, HTML5, and CSS3, and The 
 Purpose:To find flights that the user inputs depending on their desired dates. 
 This Web app. can sort from cheap to high price ranges and vice versa.
 
+<img width="1009" alt="Screen Shot 2021-03-18 at 12 00 31 AM" src="https://user-images.githubusercontent.com/74698225/111571379-105b1b00-877d-11eb-927d-b4345ed61227.png">
+
 ## Getting Started
 
 Follow these instructions to install a copy of your own and run it on your local machine.
