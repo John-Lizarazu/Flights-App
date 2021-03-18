@@ -1,70 +1,61 @@
 # Capital One Software Engineering Summit Submission
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Skyscanner Flights
 
-## Available Scripts
+Web application made with ReactJS, Material-UI, Axios, HTML5, and CSS3, and The Skyscanner API.
 
-In the project directory, you can run:
+Purpose:To find flights that the user inputs depending on their desired dates. 
+This Web app. can sort from cheap to high price ranges and vice versa.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Follow these instructions to install a copy of your own and run it on your local machine.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Good tip: Go to the RapidApi website and subscribe to get your own working API-key https://rapidapi.com/skyscanner/api/skyscanner-flight-search
 
-### `npm test`
+### Setup
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A step by step guide to get the app running.
 
-### `npm run build`
+#### Clone
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```sh
+$ git clone https://github.com/John-Lizarazu/Flights-App
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Use Node Package Manager [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/) to install the required packages.
 
-### `npm run eject`
+```sh
+$ npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+or
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```sh
+$ yarn install
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+#### Usage
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+$ npm start
+```
 
-## Learn More
+#### Implementation
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+To get the api to work you must create a new file called `.env` and import your API key.
+For example:
+```env
+REACT_API_KEY='your-api-key-here'
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+#### All set
+By then you should have a working web app and can have fun searching for flights.
 
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Resources
+[React.js](https://reactjs.org/) - Front-end web library
+[Material-UI](https://material-ui.com/) - React UI framework
+[Skyscanner API](https://rapidapi.com/skyscanner/api/skyscanner-flight-search) - Flight API
+[Axios](https://www.npmjs.com/package/axios) - Promise based HTTP client

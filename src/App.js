@@ -13,7 +13,9 @@ import {Container} from "@material-ui/core";
 import Load from "./components/Load";
 import axios from "axios";
 import "./App.css";
-
+//import all the components to app in order for everything to work properly
+//this app is then used to run the web app and API
+//main component
 export default function App() {
   const [ countries, setCountries] = useState([]);
   const [ currencies, setCurrencies] = useState([]);
@@ -32,7 +34,7 @@ export default function App() {
   const [ routes,setRoutes] = useState([]);
   const [ places, setPlaces] = useState([]);
   const [ carriers, setCarriers] = useState([]);
-
+  //this app function will execute when the user clicks on the search button
   const handleFlightOptions = async () => {
     if (!currency || !originPlace || !destinationPlace) {
       setToastText("Input required fields please")

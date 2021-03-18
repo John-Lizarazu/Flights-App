@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { TextField, Grid } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 import axios from "axios";
-
+//This component captures the inputs from the user and creates their origin info
 export default function OriginInfo ({
     countries,
     currency,
@@ -10,19 +10,18 @@ export default function OriginInfo ({
     handlePlaceChange,
     handlePlacesChange,
   }) {
-    
+    //State for storing user input and API data
     const [originCity, setOriginCity] = useState("");
     const [originCountry, setOriginCountry] = useState("");
     const [originPlaces, setOriginPlaces] = useState([]);
   
     
     useEffect(() => {
-     
+     //Fetch the places bases on user input
       const fetchPlaces = async () => {
-  
+        // the if statement is used to ensure that the user has entered everything correctly
         if(originCity.length >=2 && currency.length >0){
 
-        
           const { data } = await axios.get(
               `https://skyscanner-skyscanner-flight-search-v1.p.rapidapi.com/apiservices/autosuggest/v1.0/US/${currency}/en-US/`,
             {
@@ -34,13 +33,13 @@ export default function OriginInfo ({
             }
           );
   
-         
+         //set states to places
           setOriginPlaces(data.Places);
           handlePlacesChange(data.Places);
         }
       };
   
-      
+      //call the function
       fetchPlaces();
       // eslint-disable-next-line
     }, [originCity, originCountry, currency, countries]);

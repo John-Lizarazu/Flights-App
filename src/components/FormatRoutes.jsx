@@ -3,6 +3,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Routes from "./Routes";
 import { Grid, MenuItem, FormControl, Select, InputLabel} from "@material-ui/core";
 
+//This component will give the routes a cetrain format to be better organized 
 const useStyles = makeStyles((theme) => ({
     formControl: {
         margin:theme.spacing(1),
@@ -12,27 +13,27 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(2),
     },
 }));
-
+    //this is what functions the sorting and displaying the routes
 export default function FormatRoutes({
     routes,currency,currencies,carriers,places,
 }) {
     const classes = useStyles();
 
     const [sortBy, setSortBy] = useState(-1);
-
+    //retrieves the money symbol
     let Symbol;
     if (currency.length > 0) {
         Symbol=currencies.filter((curr) => curr.Code === currency)[0].Symbol;
     } else {
         Symbol="";
     }
-
+    //This sort dropdown makes it either ascending or descending
     if(sortBy === -1) {
         routes.sort((a,b) => (a.QuoteId > b.QuoteId ? 1 : -1));
     } else {
         routes.sort ((a, b) => (a.QuoteId < b.QuoteId ? 1 : -1));
     }
-
+    //Sorts the routes in ascending order
     const sortedList = [...routes].sort((a, b) =>
         a.QuoteId > b.QuoteId ? 1 : -1 
     );

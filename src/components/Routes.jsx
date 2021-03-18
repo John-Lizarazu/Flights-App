@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Card, Button, Typography, CardContent, CardActions} from "@material-ui/core";
-
+//using material-ui to format what will be displayed
 const useStyles = makeStyles({
     root: {
         minWidth:250,
@@ -18,7 +18,9 @@ const useStyles = makeStyles({
         marginBottom:12,
     },
 });
-
+//This component is used to connect with the API and set its value to what is called
+//also when the user searches for their routes it would be displayed on a card and 
+//it will show their route and etc.
 export default function Route({
     route,Symbol,carriers,places,cheap,
 }) {

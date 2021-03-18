@@ -3,18 +3,19 @@ import { TextField, Grid } from "@material-ui/core";
 import { Autocomplete } from "@material-ui/lab";
 import axios from "axios";
 
+// This component will capture the input from the user and will use the api to find and assign their destination place
 export default function DestinationInfo({ countries,currency, destinationPlace,handlePlaceChange,handlePlacesChange,}) {
     const [ destinationCountry, setDestinationCountry] = useState("");
     const [ destinationCity, setDestinationCity] = useState("");
     const [ destinationPlaces, setDestinationPlaces] = useState([]);
 
-
+    // fetching the api and assigning consts to certain data
   useEffect(() => {
         const fetchPlaces = async () => {
             const country = countries.filter(
                 (item) => item.Name === destinationCountry
             );
-
+                //This if statement is implied when everything is entered correctly 
             if (
                 country.length > 0 &&
                 destinationCity.length >= 2 &&
@@ -34,13 +35,13 @@ export default function DestinationInfo({ countries,currency, destinationPlace,h
                 handlePlacesChange(data.Places);
          }
         };
-
+        //call the function
         fetchPlaces();
         // eslint-disable-next-line
     }, [destinationCity, destinationCountry, currency, countries]);
 
   return (
-        <>
+        <>  
             <Grid container spacing={1}>
                 <Grid className="d-flex" item form="maincomponent" xs>
                     <TextField

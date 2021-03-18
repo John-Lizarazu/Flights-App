@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
-
+//using material-ui to better format and display the date
 const useStyles = makeStyles((theme) => ({
     container: {
         display: "flex",
@@ -13,7 +13,7 @@ const useStyles = makeStyles((theme) => ({
         width: 300,
     },
 }));
-
+//This component connects with the API and sets its value
 export default function OutboundInfo ({
     outboundDate, handleOutboundChange,
 }) {
