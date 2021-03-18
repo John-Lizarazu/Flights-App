@@ -73,7 +73,7 @@ export default function Route({
                     <br />
                 </Typography>
                 <Typography variant="body1" component="p">
-                    <strong>Departure datee: </strong> {`${departureDateOutbound}`}
+                    <strong>Departure date: </strong> {`${departureDateOutbound}`}
                     <br />
                 </Typography>
                 <Typography variant="h5" component="h2">

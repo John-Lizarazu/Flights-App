@@ -58,7 +58,7 @@ By then you should have a working web app and can have fun searching for flights
 <img width="972" alt="Screen Shot 2021-03-18 at 12 06 33 AM" src="https://user-images.githubusercontent.com/74698225/111571884-e81fec00-877d-11eb-8c72-fc8e24be13ac.png">
 
 
-<img width="942" alt="Screen Shot 2021-03-18 at 12 08 31 AM" src="https://user-images.githubusercontent.com/74698225/111572020-38974980-877e-11eb-8717-2e11e97d5f41.png">
+<img width="934" alt="Screen Shot 2021-03-18 at 2 11 21 AM" src="https://user-images.githubusercontent.com/74698225/111581239-46a19600-878f-11eb-8d1e-0db7f2e1ac66.png">
 
 
 #### Resources :checkered_flag:
