@@ -5,9 +5,8 @@ import { Alert } from "@material-ui/lab";
 //using material-ui for alert functionality
 export default function WarningMessage() {
     return (
-        <Alert severity="warning">
-            Nothing to display at the moment! 
-            Double check your information for any mistakes.
+        <Alert severity="info"> 
+            Please fill out everything before searching.
         </Alert>
     );
 }
